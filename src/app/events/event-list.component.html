@@ -1,0 +1,16 @@
+<div>
+    <h1>Upcoming Angular Events</h1>
+    <hr/>
+    <!-- <events-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></events-thumbnail> -->
+    <div class="well">
+        <div>Hello World</div>
+    </div>
+    <!-- <events-thumbnail  #childComponent *ngFor="let event of events" [event]="event"></events-thumbnail> -->
+    <div class="row">
+        <div *ngFor="let event of events" class="col-md-5">
+            <events-thumbnail #childComponent (click)="handleThumbnailClick(event.name)" [event]="event"></events-thumbnail>
+            <h1>{{childComponent.childProperty}}</h1>
+            <button class="btn btn-primary" (click)="childComponent.logFoo()">Click Me!</button>
+        </div>
+    </div>
+</div>
